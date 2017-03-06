@@ -1,5 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Router, hashHistory } from 'react-router';
+import routes from './config/routes';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Css Files
+import '../public/css/style.css';
+
+class App extends React.Component {
+  render() {
+    return (
+      <Router history={hashHistory}>{routes}</Router>
+    );
+  }
+}
+ReactDOM.render(<App />,document.getElementById('root'));
